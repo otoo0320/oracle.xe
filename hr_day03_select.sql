@@ -83,6 +83,26 @@ SELECT department_name || q'[department's manager ID: ]' || manager_id
 AS "Department and Manager"
 From departments;
  
+/*
+중복행
+    기본적으로 query 결과에는 중복 행을 포함한 모든행이 표시됨
+    DISTINCT
+    결과에서 중복행 제거
+*/
+--중복행
+SELECT department_id
+FROM employees;
+
+-- 중복제거
+SELECT DISTINCT department_id
+FROM employees;
+
+/* 
+테이블 구조표시
+    DESCRIBE 명령을 사용하여 테이블 구조를 표시
+*/
+DESCRIBE employees;
+
  
  
  
