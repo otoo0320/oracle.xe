@@ -52,7 +52,13 @@ ON d.location_id = l.location_id;
 SELECT e.employee_id, e.last_name, e.department_id, d.department_id, d.location_id, e.manager_id
 FROM employees e JOIN departments d
 ON (e.department_id = d.department_id)
-WHERE e.manager_id = 149
+WHERE e.manager_id = 149;
+
+--ON대신에 WHERE 써도 됨
+SELECT e.employee_id, e.last_name, e.department_id, d.department_id, d.location_id, e.manager_id
+FROM employees e, departments d
+WHERE e.department_id = d.department_id;
+
 
 /*
 테이블 자체 조인
@@ -146,21 +152,6 @@ cross join 생성
 SELECT last_name, department_name
 FROM employees
 CROSS JOIN departments;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
