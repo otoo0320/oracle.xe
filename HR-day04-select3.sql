@@ -75,9 +75,7 @@ WHERE employee_id = &employee_num;
         --> #변수 명
 */
 VAR  employee_num NUMBER
-
-EXEC :employee_num :=200
-
+EXEC :employee_num :=101
 SELECT employee_id, last_name, salary
 FROM employees
 WHERE employee_id = :employee_num;
