@@ -10,11 +10,11 @@ Subquery 구문
 -- 단일 행 Subquery 실행
 SELECT last_name, salary
 FROM employees
-WHERE salary >
+WHERE salary >=
             (SELECT salary
             FROM employees
             WHERE last_name = 'Abel');
---lastname이 able이라는 사원의 급여는 11000 이고 이보다 많은 급여만 보여라 이소리
+--lastname이 abel이라는 사원의 급여는 11000 이고 이보다 많은 급여만 보여라 이소리
 
 -- Subquery에서 그룹 함수 사용
 SELECT last_name, job_id, salary
@@ -37,9 +37,8 @@ WHERE salary =
         subquery에서 반환되는 모든 값과 비교합니다.
         > ALL은 최대값보다 큼을 의미합니다.
         < ALL은 최소값보다 작음을 의미합니다
-        
-        
 */
+
 SELECT employee_id, last_name, job_id, salary
 FROM employees
 WHERE salary IN
@@ -56,7 +55,7 @@ AND job_id <> 'IT_PROG';
 
 SELECT employee_id, last_name, job_id, salary
 FROM employees
-WHERE salary < ANY
+WHERE salary <= ANY
                 (SELECT salary
                 FROM employees
                 WHERE job_id = 'IT_PROG')
@@ -75,10 +74,14 @@ AND job_id <> 'IT_PROG';
 EXISTS 연산자 사용
     subquery에서 최소한 한 개의 행을 반환하면 TRUE로 평가됩니다.
 */
-SELECT * FROM departments
+SELECT * FROM departments 
 WHERE NOT EXISTS
             (SELECT * FROM employees
             WHERE employees.department_id=departments.department_id);
+            
+            
+            
+            
             
             
 
@@ -86,7 +89,7 @@ WHERE NOT EXISTS
 Subquery의 null 값
     반환되는 값 중 하나가 null 값이면 전체 query가 행을 반환하지 않습니다.
     null 값을 비교하는 모든 조건은 결과가 null이기 때문입니다.
-    
+    그러므로 NULL 값이 비교조건에 포함되지 않도록
 */
 SELECT emp.last_name
 FROM employees emp
