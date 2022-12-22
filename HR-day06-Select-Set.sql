@@ -74,13 +74,3 @@ FROM employees
 ORDER BY name DESC
 WHERE name like '%a%';
 
-
-
-
-
-
-
-
-
-
-
