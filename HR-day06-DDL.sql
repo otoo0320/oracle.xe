@@ -93,5 +93,39 @@ CREATE TABLE dept4(
 --default라는 조건을 dname에 검
 --loc에는 1또는 2라는 값만 들어갈 수 있게 제약을 검
 
+desc dept4;
+
+INSERT INTO dept4 (deptno, dname, loc)
+VALUES(1, '마켓팅', 2);
+commit;
+
+select * from dept4;
+
+CREATE TABLE dept5(
+deptno NUMBER(2) PRIMARY KEY
+dname VARCHAR2(15) NOT NULL);
+
+INSERT INTO dept5 (deptno, dname)
+VALUES(1, 'QA');
+
+CREATE TABLE emp(
+empno NUMBER(4)PRIMARY KEY
+ename 
+
+
+
+
++
+SELECT * FROM DEPT5
+VALUES)1, 'MINE', ':
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+
+-- 제약 조건은 수정 불가능, 삭제만 가능
+ALTER TABLE dept4 DROP CONSTRAINT dept4_loc_ck;
+
+-- 제약 조건 추가하기
+ALTER TABLE dept4 ADD(CONSTRAINT dept4_loc2_ck CHECK(loc IN('1', '2'));
+
+--
 
 
